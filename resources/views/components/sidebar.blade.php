@@ -6,6 +6,7 @@
     <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="{{ asset('icon.svg') }}" type="image/x-icon"/>
 </head>
 
 <body class="bg-gray-100 min-h-screen flex">
@@ -21,7 +22,7 @@
                         d="M21 5H3a1 1 0 0 0-1 1v3a2 2 0 1 1 0 4v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-3a2 2 0 1 1 0-4V6a1 1 0 0 0-1-1zm-4 6a1 1 0 0 1-1 1H8a1 1 0 1 1 0-2h8a1 1 0 0 1 1 1z" />
                 </svg>
 
-                <h1 class="text-xl font-bold text-blue-600 italic">P-Tiket</h1>
+                <h1 class="text-xl font-bold text-blue-600 italic">TFly.</h1>
             </div>
 
             <!-- Menu Navigation -->

@@ -49,7 +49,7 @@ class LoginController extends Controller
     public function destroy($id = null)
     {
         Auth::logout();
-        return redirect()->route('/');
+        return redirect('/');
     }
 
     // Fungsi lain tidak digunakan, tapi wajib ada

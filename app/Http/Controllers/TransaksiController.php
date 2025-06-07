@@ -133,8 +133,14 @@ class TransaksiController extends Controller
         return redirect()->route('transaksis.riwayat');
     }
 
+
     public function riwayat()
     {
+        // Mengecek apakah pengguna sudah login
+        if (!Auth::check()) {
+            return redirect()->route('login.index')->with('error', 'Silakan login untuk melihat riwayat transaksi.');
+        }
+
         $user = Auth::user();
 
         // Mengambil transaksi milik pengguna yang diurutkan dari yang paling lama
@@ -144,8 +150,10 @@ class TransaksiController extends Controller
             ->oldest() // Menggunakan `oldest()` untuk urutan dari yang paling lama
             ->get();
 
+        // Mengirim data transaksi ke view riwayat
         return view('riwayat', compact('transaksis'));
     }
+
 
 public function confirmTransaksi($id)
 {

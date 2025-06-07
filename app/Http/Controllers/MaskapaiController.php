@@ -117,12 +117,40 @@ class MaskapaiController extends Controller
         $maskapai->delete();
         return redirect()->route('maskapais.index');
     }
+    
+    public function tiket(Request $request)
+    {
+        $query = Maskapai::query();
 
-    public function tiket()
-{
-    $maskapais = Maskapai::all();
-    return view('tiket', compact('maskapais'));
-}
+        // Filter berdasarkan keberangkatan jika ada
+        if ($request->filled('keberangkatan')) {
+            $query->where('kota_keberangkatan', 'like', '%' . $request->keberangkatan . '%');
+        }
+
+        // Filter berdasarkan tujuan jika ada
+        if ($request->filled('tujuan')) {
+            $query->where('kota_tujuan', 'like', '%' . $request->tujuan . '%');
+        }
+
+        // Filter berdasarkan tanggal keberangkatan jika ada
+        if ($request->filled('tanggal')) {
+            $query->whereDate('tanggal', $request->tanggal);
+        }
+
+        // Filter berdasarkan kapasitas kursi jika ada
+        if ($request->filled('kapasitas')) {
+            $query->where('kapasitas_kursi', '>=', $request->kapasitas);
+        }
+
+        // Ambil hasil query dengan pagination, misalnya 10 per halaman
+        $maskapais = $query->paginate(10);
+
+        // Ambil kota keberangkatan dan kota tujuan yang unik
+        $kotaKeberangkatan = Maskapai::select('kota_keberangkatan')->distinct()->pluck('kota_keberangkatan');
+        $kotaTujuan = Maskapai::select('kota_tujuan')->distinct()->pluck('kota_tujuan');
+
+        return view('tiket', compact('maskapais', 'kotaKeberangkatan', 'kotaTujuan'));
+    }
 
 
 }

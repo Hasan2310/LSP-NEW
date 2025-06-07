@@ -1,15 +1,15 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MaskapaiController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard.dashboard');
@@ -25,5 +25,6 @@ Route::post('/transaksis/{id}/confirm', [TransaksiController::class, 'confirmTra
 Route::resource('login', LoginController::class);
 Route::post('/logout', function () {
     Auth::logout();
-    return redirect()->route('login.index');
+    return redirect()->route('home');  // Mengarahkan ke halaman utama menggunakan nama rute 'home'
 })->name('logout');
+

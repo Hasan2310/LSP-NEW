@@ -16,7 +16,7 @@
         </div>
     @endif
 
-    <div class="overflow-x-auto">
+    <div class="">
         <table class="min-w-full bg-white border border-gray-200 shadow-md rounded-md overflow-hidden">
             <thead class="bg-gray-100">
                 <tr>
