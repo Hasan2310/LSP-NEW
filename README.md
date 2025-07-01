@@ -19,16 +19,16 @@ This is a simple and modern web application built for booking flight tickets onl
 ## 🖼️ Screenshots
 
 ### 🏠 Home
-![Home](./pictures/beranda.png)
+![Home](./picture/beranda.png)
 
 ### 🔐 Login
-![Login](./pictures/login.png)
+![Login](./picture/login.png)
 
 ### 📜 Booking History
-![Riwayat](./pictures/riwayat.png)
+![Riwayat](./picture/riwayat.png)
 
 ### 🎟️ Ticket Information
-![Tiket](./pictures/tiket.png)
+![Tiket](./picture/tiket.png)
 
 ## 🚧 Status
 
