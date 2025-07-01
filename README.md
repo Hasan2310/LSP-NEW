@@ -18,11 +18,17 @@ This is a simple and modern web application built for booking flight tickets onl
 
 ## 🖼️ Screenshots
 
-All screenshots are stored in the `pictures` folder:
-- `beranda.png` – Homepage
-- `login.png` – Login Page
-- `riwayat.png` – Booking History
-- `tiket.png` – Ticket Information Page
+### 🏠 Home
+![Home](./pictures/beranda.png)
+
+### 🔐 Login
+![Login](./pictures/login.png)
+
+### 📜 Booking History
+![Riwayat](./pictures/riwayat.png)
+
+### 🎟️ Ticket Information
+![Tiket](./pictures/tiket.png)
 
 ## 🚧 Status
 
